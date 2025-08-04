@@ -55,6 +55,11 @@ public static class ApiExtensions
                       .AllowAnyMethod()
                       .AllowCredentials();
             });
+
+            options.AddPolicy("AllowAll", policy =>
+                policy.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader());
         });
 
         services.AddLogging(logging => logging.AddSerilog());

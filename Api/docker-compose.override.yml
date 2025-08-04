@@ -5,15 +5,21 @@ services:
     container_name: centraltask.api              # Nome fixo do container
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - DOTNET_USE_POLLING_FILE_WATCHER=1
-      - ASPNETCORE_HTTP_PORTS=8080
-      - ASPNETCORE_HTTPS_PORTS=8081
-      - RabbitMQ__Host=rabbitmq
-      - RabbitMQ__Port=5672
-      - RabbitMQ__UserName=guest
-      - RabbitMQ__Password=guest
+      # ConnectionStrings
+      - ConnectionStrings__DefaultConnection=Server=host.docker.internal;Port=5432;Database=appdb;UID=postgres;PWD=postgres
+      # ConfigSwagger
+      - ConfigSwagger__User=admin
+      - ConfigSwagger__Senha=admin
+      # JwtSettings
+      - JwtSettings__SecretKey=12315123123-7A6A-468C-92E4-B452B25267AA
+      - JwtSettings__ExpiracaoHoras=5
+      - JwtSettings__Emissor=CentralTask
+      # ConfigBroker (RabbitMQ)
+      - ConfigBroker__HostName=rabbitmq
+      - ConfigBroker__Port=5672
+      - ConfigBroker__UserName=guest
+      - ConfigBroker__Password=guest
     ports:
-      - "8080:8080"
       - "8081:8081"
       - "5005:5005" # Debug remoto
     volumes:

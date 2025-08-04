@@ -7,9 +7,23 @@ services:
     image: minha-api
     container_name: api
     ports:
-      - "5000:5000"
+      - "8081:5000"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+      # ConnectionStrings
+      - ConnectionStrings__DefaultConnection=Server=db;Port=5432;Database=appdb;UID=postgres;PWD=postgres
+      # ConfigSwagger
+      - ConfigSwagger__User=admin
+      - ConfigSwagger__Senha=admin
+      # JwtSettings
+      - JwtSettings__SecretKey=12315123123-7A6A-468C-92E4-B452B25267AA
+      - JwtSettings__ExpiracaoHoras=5
+      - JwtSettings__Emissor=CentralTask
+      # ConfigBroker (RabbitMQ)
+      - ConfigBroker__HostName=rabbitmq
+      - ConfigBroker__Port=5672
+      - ConfigBroker__UserName=guest
+      - ConfigBroker__Password=guest
     networks:
       - app_network
 
@@ -51,6 +65,7 @@ services:
 
 networks:
   app_network:
+    external: true
 
 volumes:
   postgres_data:
