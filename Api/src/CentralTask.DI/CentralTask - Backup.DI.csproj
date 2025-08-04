@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+	  <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+	  <PackageReference Include="Azure.Storage.Blobs" Version="12.13.1" />
+	  <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+	  <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
+	  <PackageReference Include="Microsoft.Extensions.Http" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ConnectGod.Application\ConnectGod.Application.csproj" />
+    <ProjectReference Include="..\ConnectGod.Core\ConnectGod.Core.csproj" />
+    <ProjectReference Include="..\ConnectGod.Infra.Data\ConnectGod.Infra.Data.csproj" />
+    <ProjectReference Include="..\ConnectGod.Infra.Email\ConnectGod.Infra.Email.csproj" />
+    <ProjectReference Include="..\ServicosExternos.AzureClobe\ConnectGod.Infra.ServicosExternos.AzureBlobStorage.csproj" />  
+  </ItemGroup>
+
+</Project>

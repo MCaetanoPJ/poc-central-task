@@ -1,0 +1,68 @@
+.login {
+  max-width: 400px;
+  margin: 6rem auto;
+  padding: 2rem;
+  background-color: var(--light);
+  box-shadow: var(--shadow);
+  border-radius: 0.75rem;
+  text-align: left;
+  font-family: 'montserrat', sans-serif;
+  color: var(--dark);
+}
+
+.login h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.login form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.login label {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--dark);
+}
+
+.login input[type="email"],
+.login input[type="password"] {
+  display: block;
+  width: 100%;
+  font-size: 1.125rem;
+  padding: 1rem 1.5rem;
+  color: var(--dark);
+  background-color: #FFF;
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow);
+  border: none;
+  outline: none;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.login input[type="email"]:focus,
+.login input[type="password"]:focus {
+  box-shadow: 0 0 8px var(--personal-glow);
+}
+
+.login button {
+  display: block;
+  width: 100%;
+  font-size: 1.125rem;
+  padding: 1rem 1.5rem;
+  color: #FFF;
+  background-color: var(--primary);
+  border-radius: 0.5rem;
+  box-shadow: var(--personal-glow);
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  border: none;
+}
+
+.login button:hover {
+  opacity: 0.75;
+}

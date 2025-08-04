@@ -1,0 +1,6 @@
+services:
+  centraltask.api:
+    image: ${DOCKER_REGISTRY-}centraltaskapi
+    build:
+      context: .
+      dockerfile: src/CentralTask.Api/Dockerfile
