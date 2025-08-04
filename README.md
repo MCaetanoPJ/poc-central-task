@@ -1,6 +1,9 @@
 # (Docker) Para iniciar o projeto, basta executar o comando docker:
 docker-compose up --build
 
+# (Docker) Como são muitos projetos executando ao mesmo tempo, é necessário que tenham uma rede em comum dentro do docker, para isso, execute o comando abaixo:
+docker network create app_network
+
 # (Front)🏗️ Arquitetura do Projeto Vue - CentralTask
 
 Este documento descreve a arquitetura do projeto **CentralTask**, desenvolvido com Vue.js, Vite, Vue Router e Pinia.
