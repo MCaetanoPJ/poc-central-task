@@ -1,8 +1,11 @@
-# (Docker) Para iniciar o projeto, basta executar o comando docker:
-docker-compose up --build
+# Criando a rede Docker:
+Como o projeto utiliza diversos serviços que precisam se comunicar entre si, todos os containers devem estar na mesma rede.
+Para isso, execute:
 
-# (Docker) Como são muitos projetos executando ao mesmo tempo, é necessário que tenham uma rede em comum dentro do docker, para isso, execute o comando abaixo:
-docker network create app_network
+**docker network create app_network**
+
+# Para iniciar o projeto, basta executar o comando docker:
+**docker-compose up --build**
 
 # (Front)🏗️ Arquitetura do Projeto Vue - CentralTask
 
